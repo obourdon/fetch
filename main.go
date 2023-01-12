@@ -296,6 +296,7 @@ func parseOptions(c *cli.Context, logger *logrus.Logger) FetchOptions {
 		assetChecksumMap[assetChecksum] = true
 	}
 
+	logger.Info(fmt.Sprintf("Got token: <%s>", c.String(optionGithubToken)))
 	return FetchOptions{
 		RepoUrl:                  c.String(optionRepo),
 		GitRef:                   c.String(optionRef),
